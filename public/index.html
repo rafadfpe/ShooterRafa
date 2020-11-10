@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Final Shooter Game</title>
+    <link rel="manifest" href="files/manifest.json">
+    <meta name="description" content="APP juego Shooter">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#fafafa" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Shooter">
+    <link rel="apple-touch-icon" href="files/icon/camera192.png">
+
+    <!-- sass compiled -->
+    <link type="text/css" rel="stylesheet" href="files/css/main.css" />
+    <link href="files/css/main.css.map" />
+
+    <!-- material icons -->
+    <link type="text/css" rel="stylesheet" href="files/css/materialdesignicons.css" />
+    <link href="files/css/materialdesignicons.css.map" />
+
+    <!-- swiperjs -->
+    <link rel="stylesheet" href="app/libs/swiper.css" />
+</head>
+
+<body>
+    <div id="app" class="app">
+        <!-- SPLASH PAGE - Información sobre splash page. -->
+        <section id="splash_page" class="full_window">
+            <!-- Splash template -->
+            <h1>Shooter Game</h1>
+            <div class="picture">
+                <img src="./files/img/characters/char_02.png" alt="Juego logo1" title="Juego Logo1">
+                <img src="./files/img/characters/char_01.png" alt="Juego logo2" title="Juego Logo2">
+                <img src="./files/img/characters/char_03.png" alt="Juego logo3" title="Juego Logo3">
+            </div>
+            <p>Bienvenido a <span>Shooter Game</span> en el que pasaras momentos inolvidables.</p>
+            <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. 
+                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, ...</p>
+        </section>
+        <!-- MAIN PAGE - página donde está alojado el juego -->
+        <section id="main_page" class="full_window">
+            <!-- Main page UI -->
+            <div class="ui">
+                <div class="lifes">
+                    <span class="icon">
+                        <span class="mdi mdi-cards-heart"></span>
+                    </span>
+                    <span class="amount">3</span>
+                </div>
+                <div class="score">
+                    <span class="icon">
+                        <span class="mdi mdi-star"></span>
+                    </span>
+                    <span class="amount">104</span>
+                </div>
+                <div class="pause">
+                    <a href="#modal_pause_window" class="pause_btn" id="pause" navigation-type="modal" animation-type="pause_modal">
+                        <span class="mdi mdi-pause-circle-outline"></span>
+                    </a>
+                </div>
+            </div>
+            <!-- Main page Juego!! -->
+            <div class="game">
+                
+            </div>
+        </section>
+
+        <!-- VENTANA MODAL PAUSA -->
+        <section id="modal_pause_window" class="modal_window">
+            <!-- modal overlay -->
+            <div class="overlay"></div>
+            <!-- modal holder -->
+            <div class="holder">
+                <!-- modal settings -->
+                <header class="header">
+                    <h1>Juego pausado</h1>
+                    <div class="cta">
+                        <div class="settings">
+                            <div class="setting">
+                                <span class="mdi mdi-volume-high"></span>
+                                Música de fondo
+                                <span class="mdi mdi-checkbox-blank-circle"></span>
+                                <span class="mdi mdi-checkbox-blank-circle"></span>
+                                <span class="mdi mdi-checkbox-blank-circle"></span>
+                            </div>
+                            <div class="setting">
+                                <span class="mdi mdi-music-note-eighth"></span>
+                                Sonidos del juego
+                                <span class="mdi mdi-checkbox-blank-circle"></span>
+                                <span class="mdi mdi-checkbox-blank-circle"></span>
+                                <span class="mdi mdi-checkbox-blank-circle"></span>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <footer class="footer">
+                    <div class="foot_navigation">
+                        <ul class="menu_items">
+                            <li class="menu_item">
+                                <a href="#main_page" navigation-type="modal" animation-type="resume_modal">
+                                    <div class="menu_item_icon">
+                                        <span class="mdi mdi-keyboard-backspace"></span>
+                                    </div>
+                                    <div class="menu_item_link">
+                                        Volver al Juego
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="menu_item">
+                                <a href="#leaderboard_page" navigation-type="modal" animation-type="confirm_modal_in">
+                                    <div class="menu_item_icon">
+                                        <span class="mdi mdi-home"></span>
+                                    </div>
+                                    <div class="menu_item_link">
+                                        Salir del Juego
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </footer>
+                <!-- modal ctas -->
+            </div>
+        </section>
+
+        <!-- VENTANA MODAL CONFIRMACIÓN -->
+        <section id="modal_confirm" class="modal_window">
+            <!-- modal overlay -->
+            <div class="overlay"></div>
+            <!-- modal holder -->
+            <div class="holder">
+                <!-- modal message -->
+                <div class="message">
+                    Si sales del juego, perderás tus puntos <br><br>
+                    ¿Estás seguro?
+                </div>
+                <!-- modal cta -->
+                <div class="cta">
+                    <a class="btn btn_primary" href="#menu_page" navigation-type="animation" animation-type="game_out">Salir del juego</a>
+                    <a class="btn btn_secondary" href="#main_page" navigation-type="modal" animation-type="confirm_modal_out">Cancelar</a>
+                
+                </div>
+            </div>
+        </section>
+
+        <div id="swiper_page" class="swiper_section full_window">
+            <div class="swiper-wrapper">
+            <!-- PÁGINA DE SETTINGS -->
+            <section id="settings_page" class="swiper_item swiper-slide">
+                <header class="header">
+                    <h1>Configuración</h1>
+                </header>
+                
+                <div class="main">
+                    Página de Configuración <br><br>
+                    <div class="settings">
+                        <div class="setting">
+                            <span class="mdi mdi-volume-high"></span>
+                            Música de fondo
+                            <span class="mdi mdi-checkbox-blank-circle"></span>
+                            <span class="mdi mdi-checkbox-blank-circle"></span>
+                            <span class="mdi mdi-checkbox-blank-circle"></span>
+                        </div>
+                        <div class="setting">
+                            <span class="mdi mdi-music-note-eighth"></span>
+                            Sonidos del juego
+                            <span class="mdi mdi-checkbox-blank-circle"></span>
+                            <span class="mdi mdi-checkbox-blank-circle"></span>
+                            <span class="mdi mdi-checkbox-blank-circle"></span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <footer class="footer">
+                    <div class="foot_navigation">
+                        <ul class="menu_items">
+                            <li class="menu_item">
+                                <a href="#menu_page" navigation-type="swipe">
+                                    <div class="menu_item_icon">
+                                        <span class="mdi mdi-home"></span>
+                                    </div>
+                                    <div class="menu_item_link">
+                                        Inicio
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </footer>
+            </section>
+
+            <!-- MENU PAGE - Página de menu -->
+            <section id="menu_page" class="swiper_item swiper-slide">
+                <header class="header">
+                    <h1>Shooter Game</h1>
+                </header>
+                <div class="slider">
+                    <img src="./files/img/characters/char_02.png" alt="Juego logo1" title="Juego Logo1">
+                    <img src="./files/img/characters/char_01.png" alt="Juego logo2" title="Juego Logo2">
+                    <img src="./files/img/characters/char_03.png" alt="Juego logo3" title="Juego Logo3">
+                </div>
+                
+                <footer class="footer">
+                    <div class="ctas">
+                        <a href="#main page" class="button button_primary block_level" navigation-type="animation" animation-type="menu_to_game">Jugar</a>
+                        <a href="index.html" class="button button_secondary_outlined block_level get_away">Salir</a>
+                    </div>
+                    
+                    <div class="foot_navigation">
+                        <ul class="menu_items">
+                            <li class="menu_item">
+                                <a href="#settings_page" navigation-type="swipe">
+                                    <div class="menu_item_icon">
+                                        <span class="mdi mdi-cogs"></span>
+                                    </div>
+                                    <div class="menu_item_link">
+                                        Configuración
+                                    </div>
+                                    <span class="icon">
+                                        
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="menu_item">
+                                <a href="#leaderboard_page" navigation-type="swipe">
+                                    <div class="menu_item_icon">
+                                        <span class="mdi mdi-view-list"></span>
+                                    </div>
+                                    <div class="menu_item_link">
+                                        Clasificación
+                                    </div>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <div class="cta">
+                        <button id="butInstall" aria-label="Install" >INSTALAR APP</button>
+                    </div>
+                </footer>
+            </section>
+
+            <!-- PÁGINA DE HIGH SCORES -->
+            <section id="leaderboard_page" class="swiper_item swiper-slide">
+                <!-- Leaderboard HighScore -->
+                <section class="hscore">
+                    <header class="header">
+                        <h1>Mejor puntuación</h1>
+                    </header>
+                    <div class="main">
+                        2014
+                    </div>
+                </section>
+                <!-- Leaderboard  -->
+                <section class="lboard">
+                    <header class="header">
+                        <h1>Clasificación</h1>
+                    </header>
+                    <div class="main">
+                        <div class="lboard_table">
+                            <div class="lboard_item">
+                                <div class="lboard_item_name">
+                                    Manolo Perez - 2014
+                                </div>
+                            </div>
+                            <div class="lboard_item">
+                                <div class="lboard_item_name">
+                                    Marta Sanchez - 2001
+                                </div>
+                            </div>
+                            <div class="lboard_item">
+                                <div class="lboard_item_name">
+                                    Alberto Moreno - 1955
+                                </div>
+                            </div>
+                            <div class="lboard_item you">
+                                <div class="lboard_item_name">
+                                    Emiliano García - 1887
+                                </div>
+                            </div>
+                            <div class="lboard_item">
+                                <div class="lboard_item_name">
+                                    Ana M. Martínez - 1852
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Leaderboard back to menu -->
+                <footer class="footer">
+                    <div class="foot_navigation">
+                        <ul class="menu_items">
+                            <li class="menu_item">
+                                <a href="#menu_page" navigation-type="swipe">
+                                    <div class="menu_item_icon">
+                                        <span class="mdi mdi-home"></span>
+                                    </div>
+                                    <div class="menu_item_link">
+                                        Inicio
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>                    
+                </footer>
+            </section>
+
+            </div> <!-- /swipe_wrapper-->
+        </div> <!-- /swipe_section-->
+
+
+
+
+
+
+
+        <!-- 
+            SPINNER
+            
+            Por si se necesita a la hora de hacer un spinner de carga
+            
+            -->
+        <section id="modal_loading_spinner" class="spinner_window">
+            <!-- Spinner -->
+            <span class="spinner">
+                <div class="mdi mdi-loading mdi-spin"></div>
+            </span>
+        </section>
+
+
+    </div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+            navigator.serviceWorker.register('service-worker.js')
+                .then((reg) => {
+                    console.log('Service worker registered.', reg);
+                });
+            });
+        }
+    </script>
+    
+    <!-- libs -->
+    <script src="app/libs/swiper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+    <script src="app/libs/anime.min.js" type="text/javascript"></script>
+
+    <!-- game -->
+    <script src="app/Game/Game.js" type="text/javascript"></script>
+    <script src="app/Game/Entity.js" type="text/javascript"></script>
+    <script src="app/Game/Character.js" type="text/javascript"></script>
+    <script src="app/Game/Player.js" type="text/javascript"></script>
+    <script src="app/Game/Opponent.js" type="text/javascript"></script>
+    <script src="app/Game/Shot.js" type="text/javascript"></script>
+    <script src="app/Game/utils.js" type="text/javascript"></script>
+
+    <!-- ui stuff -->
+    <script src="app/Animations.js" type="text/javascript"></script>
+    <script src="app/Navigation.js" type="text/javascript"></script>
+    <script src="app/UI.js" type="text/javascript"></script>
+
+    <!-- inits -->
+    <script src="app/main.js" type="text/javascript"></script>
+
+    <script src="files/install.js"></script>
+
+</body>
+
+</html>

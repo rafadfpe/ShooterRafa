@@ -1,0 +1,170 @@
+@import "lib/vars";
+@import "lib/reboot";
+@import "lib/keyframes";
+@import "lib/fontface";
+
+@import "lib/colors";
+@import "lib/typo";
+@import "lib/utils";
+
+@import "partials/layout";
+@import "partials/modals";
+
+$module: .5rem;
+$color_bn_100: #434343;
+$color_bn_80: #797979;
+$color_pink: #FD96D4;
+
+/* * {
+    &:not(a) {
+        border: 1px solid pink;
+    }
+}  */
+h1 {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+p {
+    text-align: justify;
+}
+.picture {
+    margin-bottom: 3rem; 
+}
+.message {
+    text-align: center;
+}
+.cta {
+    text-align: center;
+}
+.ctas {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 1rem;
+    margin-bottom: 4rem;
+}
+.button {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: .5rem 2rem;
+    border-radius: 3px;
+    text-align: center;
+
+    &_primary {
+        background-color: $color_pink;
+        color: white;
+        border: 2px solid $color_pink;
+    }
+
+    &_secondary {
+        background-color: $color_bn_80;
+        color: white;
+    }
+
+    &_secondary_outlined {
+        border: 2px solid $color_pink;
+        color: $color_bn_80;
+        background-color: transparent;
+    }
+
+    &.block_level {
+        display: block;
+    }
+}
+/*
+Component MENU ITEM
+*/
+.menu_items {
+    padding: 0 2rem;
+    list-style: none;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+}
+.menu_item {
+    a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: inherit;
+        text-decoration: none;
+    }
+    .menu_item_icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #989898;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-bottom: 0.5rem;
+        background-color: #f2f2f2;
+    }
+    .menu_item_link {
+        font-size: .87rem;
+        color: #acacac;
+    }
+    &:hover {
+        a {
+            .menu_item_icon {
+                background-color: #ebe8e8;
+                color: #808080;
+            }
+
+            .menu_item_link {
+                color: #9a9a9a;
+            }
+        }
+    }
+}
+
+#menu_page, 
+#settings_page, 
+#leaderboard_page {
+    display: flex;
+    flex-direction: column;
+    header {
+        width: 100%;
+    }
+    .hscore {
+        width: 100%;
+    }
+    .main,
+    .slider,
+    .lboard {
+        flex-basis: 100%;
+        width: 100%;
+        text-align: center;
+    }
+    footer {
+        width: 100%;
+    }
+}
+
+#main_page {
+    display: flex;
+    flex-direction: column;
+
+    .ui {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .game {
+        flex-basis: 100%;
+        width: 100%;
+    }
+} 
+
+/*
+#modal_pause_window {
+    // background-color: gray;
+}
+*/
+
